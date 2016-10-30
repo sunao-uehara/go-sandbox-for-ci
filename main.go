@@ -5,6 +5,7 @@ import (
 	pdt "github.com/sunao-uehara/go-sandbox-for-ci/products"
 )
 
+// main
 func main() {
 	product, err := pdt.GetProduct("p1")
 	if err != nil {
