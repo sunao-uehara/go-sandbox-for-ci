@@ -6,4 +6,5 @@ import (
 
 func TestMain(t *testing.T) {
 	main()
+	t.Error("err")
 }
