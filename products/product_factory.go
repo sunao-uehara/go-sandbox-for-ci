@@ -16,15 +16,16 @@ type Product interface {
 	Name() string
 }
 
-func Register(name string, factory Product) {
+func Register(name string, factory Product) error {
 	if factory == nil {
-		panic(fmt.Sprintf("Product factory %s does not exist.", name))
+		return fmt.Errorf("Product factory %s does not exist.", name)
 	}
 	_, registered := productFactories[name]
 	if registered {
 		fmt.Printf("Product factory %s already registered. Ignoring.", name)
 	}
 	productFactories[name] = factory
+	return nil
 }
 
 func GetProduct(productCode string) (Product, error) {
