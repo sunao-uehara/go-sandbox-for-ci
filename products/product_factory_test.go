@@ -10,8 +10,8 @@ func TestRegister(t *testing.T) {
 
 	// sad path passing nil product
 	err := Register("p1", nil)
-	if err.Error() != "Product factory p1 does not exist" {
-		t.Error("should occurr error")
+	if err.Error() != "Product factory p1 does not exist." {
+		t.Errorf("error should be %s", err.Error())
 	}
 }
 
