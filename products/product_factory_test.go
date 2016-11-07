@@ -5,7 +5,7 @@ import (
 )
 
 func TestRegister(t *testing.T) {
-	// redeclare p1
+	// re-declare p1
 	Register("p1", NewP1())
 
 	// sad path, pass nil product
@@ -25,6 +25,6 @@ func TestGetProduct(t *testing.T) {
 	// sad path
 	_, err = GetProduct("p3")
 	if err == nil {
-		t.Error("")
+		t.Error("p3 is not registered")
 	}
 }
